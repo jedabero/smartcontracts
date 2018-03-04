@@ -1,0 +1,15 @@
+{
+  "name": "smartcontracts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:jedabero/smartcontracts.git",
+  "author": "jedabero <jedabero20@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "zeppelin-solidity": "^1.7.0"
+  },
+  "devDependencies": {
+    "ethereumjs-testrpc": "^6.0.3",
+    "truffle": "^4.1.0"
+  }
+}
