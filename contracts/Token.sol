@@ -4,7 +4,7 @@ import "zeppelin-solidity/contracts/token/ERC20/DetailedERC20.sol";
 import "zeppelin-solidity/contracts/token/ERC20/StandardToken.sol";
 import "zeppelin-solidity/contracts/ownership/Ownable.sol";
 
-contract MyToken is DetailedERC20, StandardToken, Ownable {
+contract Token is DetailedERC20, StandardToken, Ownable {
 
   /**
    * Struct used for storing conversion value
@@ -17,16 +17,16 @@ contract MyToken is DetailedERC20, StandardToken, Ownable {
   /**
    Allows to define a rational number to calulate the amount of wei to exchange for tokens
    */
-  Rate sellPrice;
+  Rate public sellPrice;
   /**
    Allows to define a rational number to calulate the amount of tokens to exchange for wei
    */
   Rate buyPrice;
 
-  function MyToken() Ownable() DetailedERC20("My Token", "MTX", 18) public {
+  function Token() Ownable() DetailedERC20("Token", "TKX", 18) public {
     uint ts = 1000000;
     totalSupply_ = ts.mul(10 ** 18);
-    balance[this] = totalSupply_;
+    balances[this] = totalSupply_;
   }
 
   function setBuyPrices(uint numerator, uint denominator) onlyOwner public {

@@ -12,7 +12,7 @@ contract MyToken is DetailedERC20, StandardToken, Ownable {
   function MyToken() Ownable() DetailedERC20("My Token", "MTX", 18) public {
     uint ts = 1000000;
     totalSupply_ = ts.mul(10 ** 18);
-    balance[this] = totalSupply_;
+    balances[this] = totalSupply_;
   }
 
   function setPrices(uint _sellPrice, uint _buyPrice) onlyOwner public {
